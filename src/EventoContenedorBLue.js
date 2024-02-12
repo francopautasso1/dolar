@@ -1,12 +1,14 @@
+import  { useEffect } from "react";
+
 function EventoContenedorBlue(){
 
-    
+    useEffect(()=>{
     const contenedor = document.getElementById('contenedorBlue');
     
     function cursorArriba(){
           contenedor.style.transform = 'scale(1.1)';
         contenedor.style.transition = 'all 0.5s ease';
-        contenedor.style.backgroundColor = 'coral';
+        
     };
     function cursorAfuera(){
         contenedor.style.transform = 'scale(1)';
@@ -22,7 +24,7 @@ function EventoContenedorBlue(){
                     contenedor.removeEventListener('mouseover', cursorArriba)
                     contenedor.removeEventListener('mouseout', cursorAfuera)} 
                 }
-   
+            }, []);
 }
 
 export default EventoContenedorBlue;

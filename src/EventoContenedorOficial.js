@@ -1,9 +1,8 @@
-
-
+import { useEffect } from "react";
 
 function EventoContenedorOficial(){
 
-    
+    useEffect (()=>{
     const contenedor = document.getElementById('contenedorOficial');
     
     function cursorArriba(){
@@ -25,6 +24,10 @@ function EventoContenedorOficial(){
                     contenedor.removeEventListener('mouseover', cursorArriba)
                     contenedor.removeEventListener('mouseout', cursorAfuera)} 
                 }
+
+            }, []);
+
+            
    
 }
 
